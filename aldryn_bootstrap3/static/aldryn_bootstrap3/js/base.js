@@ -531,7 +531,7 @@
             bootstrap3.labelPlugin();
         }
 
-        if ($('.model-boostrap3imageplugin').length) {
+        if ($('.model-bootstrap3imageplugin').length) {
             bootstrap3.imagePlugin();
         }
     });

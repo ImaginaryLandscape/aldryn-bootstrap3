@@ -18,10 +18,10 @@ from djangocms_attributes_field.widgets import AttributesWidget
 from . import models, constants
 
 
-class Boostrap3LabelPluginForm(django.forms.models.ModelForm):
+class Bootstrap3LabelPluginForm(django.forms.models.ModelForm):
 
     class Meta:
-        model = models.Boostrap3LabelPlugin
+        model = models.Bootstrap3LabelPlugin
         exclude = ('page', 'position', 'placeholder', 'language', 'plugin_type')
         # When used inside djangocms-text-ckeditor
         # this causes the label field to be prefilled with the selected text.
@@ -135,7 +135,7 @@ class LinkForm(django.forms.models.ModelForm):
         self.fields['link_page'].queryset = cms.models.Page.objects.drafts().on_site(site)
 
     class Meta:
-        model = models.Boostrap3ButtonPlugin
+        model = models.Bootstrap3ButtonPlugin
         exclude = (
             'page', 'position', 'placeholder', 'language', 'plugin_type',
         )
@@ -184,7 +184,7 @@ class PanelPluginBaseForm(django.forms.models.ModelForm):
     create_footer = django.forms.BooleanField(required=False, initial=False)
 
     class Meta:
-        model = models.Boostrap3PanelPlugin
+        model = models.Bootstrap3PanelPlugin
         # fields = ('classes',)
         exclude = ('page', 'position', 'placeholder', 'language', 'plugin_type')
 

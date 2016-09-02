@@ -1,4 +1,5 @@
 *.pyc
+*.*~
 aldryn_bootstrap3.egg-info
 .DS_Store
 .idea/

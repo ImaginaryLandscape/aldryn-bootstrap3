@@ -102,7 +102,7 @@ class LinkMixin(models.Model):
 #################
 
 @python_2_unicode_compatible
-class Boostrap3ButtonPlugin(CMSPlugin, LinkMixin):
+class Bootstrap3ButtonPlugin(CMSPlugin, LinkMixin):
     cmsplugin_ptr = CMSPluginField()
     excluded_attr_keys = ['class', 'href', 'target', ]
 
@@ -117,16 +117,14 @@ class Boostrap3ButtonPlugin(CMSPlugin, LinkMixin):
     # button specific fields
     btn_context = model_fields.Context(
         verbose_name='context',
-        choices=constants.BUTTON_CONTEXT_CHOICES,
-        default=constants.BUTTON_CONTEXT_DEFAULT,
+        choices=[],
     )
     btn_size = model_fields.Size(verbose_name='size')
     btn_block = models.BooleanField(default=False, verbose_name='block')
     # text link specific fields
     txt_context = model_fields.Context(
         verbose_name='context',
-        choices=constants.TXT_LINK_CONTEXT_CHOICES,
-        default=constants.TXT_LINK_CONTEXT_DEFAULT,
+        choices=[],
         blank=True,
     )
     # common fields
@@ -148,7 +146,7 @@ class Boostrap3ButtonPlugin(CMSPlugin, LinkMixin):
 
 
 @python_2_unicode_compatible
-class Boostrap3BlockquotePlugin(CMSPlugin):
+class Bootstrap3BlockquotePlugin(CMSPlugin):
     cmsplugin_ptr = CMSPluginField()
 
     reverse = models.BooleanField(default=False, blank=True)
@@ -159,7 +157,7 @@ class Boostrap3BlockquotePlugin(CMSPlugin):
 
 
 @python_2_unicode_compatible
-class Boostrap3IconPlugin(CMSPlugin):
+class Bootstrap3IconPlugin(CMSPlugin):
     cmsplugin_ptr = CMSPluginField()
 
     icon = model_fields.Icon(blank=False)
@@ -171,7 +169,7 @@ class Boostrap3IconPlugin(CMSPlugin):
 
 
 @python_2_unicode_compatible
-class Boostrap3LabelPlugin(CMSPlugin):
+class Bootstrap3LabelPlugin(CMSPlugin):
     cmsplugin_ptr = CMSPluginField()
 
     label = models.CharField(
@@ -181,8 +179,7 @@ class Boostrap3LabelPlugin(CMSPlugin):
         default='',
     )
     context = model_fields.Context(
-        choices=constants.LABEL_CONTEXT_CHOICES,
-        default=constants.LABEL_CONTEXT_DEFAULT,
+        choices=[],
         blank=False,
     )
 
@@ -193,7 +190,7 @@ class Boostrap3LabelPlugin(CMSPlugin):
 
 
 @python_2_unicode_compatible
-class Boostrap3WellPlugin(CMSPlugin):
+class Bootstrap3WellPlugin(CMSPlugin):
     cmsplugin_ptr = CMSPluginField()
 
     size = model_fields.Size()
@@ -205,7 +202,7 @@ class Boostrap3WellPlugin(CMSPlugin):
 
 
 @python_2_unicode_compatible
-class Boostrap3AlertPlugin(CMSPlugin):
+class Bootstrap3AlertPlugin(CMSPlugin):
     cmsplugin_ptr = CMSPluginField()
 
     context = model_fields.Context()
@@ -226,7 +223,7 @@ def compute_aspect_ratio(image):
 
 
 @python_2_unicode_compatible
-class Boostrap3ImagePlugin(CMSPlugin):
+class Bootstrap3ImagePlugin(CMSPlugin):
     cmsplugin_ptr = CMSPluginField()
 
     file = filer.fields.image.FilerImageField(
@@ -351,7 +348,7 @@ class Boostrap3ImagePlugin(CMSPlugin):
 
 
 @python_2_unicode_compatible
-class Boostrap3SpacerPlugin(CMSPlugin):
+class Bootstrap3SpacerPlugin(CMSPlugin):
     cmsplugin_ptr = CMSPluginField()
 
     size = model_fields.Size()
@@ -403,12 +400,11 @@ class Bootstrap3FilePlugin(CMSPlugin):
 
 
 @python_2_unicode_compatible
-class Boostrap3PanelPlugin(CMSPlugin):
+class Bootstrap3PanelPlugin(CMSPlugin):
     cmsplugin_ptr = CMSPluginField()
 
     context = model_fields.Context(
-        choices=constants.PANEL_CONTEXT_CHOICES,
-        default=constants.PANEL_CONTEXT_DEFAULT,
+        choices=[],
         blank=False,
     )
 
@@ -419,7 +415,7 @@ class Boostrap3PanelPlugin(CMSPlugin):
 
 
 @python_2_unicode_compatible
-class Boostrap3PanelHeadingPlugin(CMSPlugin):
+class Bootstrap3PanelHeadingPlugin(CMSPlugin):
     cmsplugin_ptr = CMSPluginField()
 
     title = model_fields.MiniText(
@@ -436,7 +432,7 @@ class Boostrap3PanelHeadingPlugin(CMSPlugin):
 
 
 @python_2_unicode_compatible
-class Boostrap3PanelBodyPlugin(CMSPlugin):
+class Bootstrap3PanelBodyPlugin(CMSPlugin):
     cmsplugin_ptr = CMSPluginField()
 
     classes = model_fields.Classes()
@@ -446,7 +442,7 @@ class Boostrap3PanelBodyPlugin(CMSPlugin):
 
 
 @python_2_unicode_compatible
-class Boostrap3PanelFooterPlugin(CMSPlugin):
+class Bootstrap3PanelFooterPlugin(CMSPlugin):
     cmsplugin_ptr = CMSPluginField()
 
     classes = model_fields.Classes()
@@ -609,8 +605,7 @@ class Bootstrap3AccordionItemPlugin(CMSPlugin):
         default='',
     )
     context = model_fields.Context(
-        choices=constants.ACCORDION_ITEM_CONTEXT_CHOICES,
-        default=constants.ACCORDION_ITEM_CONTEXT_DEFAULT,
+        choices=[],
         blank=False,
     )
 
@@ -658,8 +653,7 @@ class Bootstrap3ListGroupItemPlugin(CMSPlugin):
         default='',
     )
     context = model_fields.Context(
-        choices=constants.LIST_GROUP_ITEM_CONTEXT_CHOICES,
-        default=constants.LIST_GROUP_ITEM_CONTEXT_DEFAULT,
+        choices=[],
         blank=True,
     )
     state = models.CharField(

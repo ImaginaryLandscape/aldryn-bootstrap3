@@ -46,9 +46,9 @@ link_fieldset = (
 
 
 class Bootstrap3BlockquoteCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3BlockquotePlugin
+    model = models.Bootstrap3BlockquotePlugin
     name = _("Blockquote")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/blockquote.html'
     allow_children = True
@@ -58,9 +58,9 @@ plugin_pool.register_plugin(Bootstrap3BlockquoteCMSPlugin)
 
 
 class Bootstrap3IconCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3IconPlugin
+    model = models.Bootstrap3IconPlugin
     name = _("Icon")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/icon.html'
     text_enabled = True
@@ -85,10 +85,10 @@ plugin_pool.register_plugin(Bootstrap3IconCMSPlugin)
 
 
 class Bootstrap3LabelCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3LabelPlugin
-    form = forms.Boostrap3LabelPluginForm
+    model = models.Bootstrap3LabelPlugin
+    form = forms.Bootstrap3LabelPluginForm
     name = _("Label")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/plugins/label/change_form.html'
     render_template = 'aldryn_bootstrap3/plugins/label.html'
     text_enabled = True
@@ -114,9 +114,9 @@ plugin_pool.register_plugin(Bootstrap3LabelCMSPlugin)
 
 
 class Bootstrap3WellCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3WellPlugin
+    model = models.Bootstrap3WellPlugin
     name = _("Well")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/well.html'
     allow_children = True
@@ -139,9 +139,9 @@ plugin_pool.register_plugin(Bootstrap3WellCMSPlugin)
 
 
 class Bootstrap3AlertCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3AlertPlugin
+    model = models.Bootstrap3AlertPlugin
     name = _("Alert")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/alert.html'
     allow_children = True
@@ -164,9 +164,9 @@ plugin_pool.register_plugin(Bootstrap3AlertCMSPlugin)
 
 
 class Bootstrap3ButtonCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3ButtonPlugin
+    model = models.Bootstrap3ButtonPlugin
     name = _("Link/Button")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     form = forms.LinkForm
     change_form_template = 'admin/aldryn_bootstrap3/plugins/button/change_form.html'
     render_template = 'aldryn_bootstrap3/plugins/button.html'
@@ -206,9 +206,9 @@ plugin_pool.register_plugin(Bootstrap3ButtonCMSPlugin)
 
 
 class Bootstrap3ImageCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3ImagePlugin
+    model = models.Bootstrap3ImagePlugin
     name = _("Image")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/image.html'
     text_enabled = True
@@ -300,9 +300,9 @@ plugin_pool.register_plugin(Bootstrap3ImageCMSPlugin)
 
 
 class Bootstrap3SpacerCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3SpacerPlugin
+    model = models.Bootstrap3SpacerPlugin
     name = _("Spacer")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/spacer.html'
     text_enabled = True
@@ -330,7 +330,7 @@ plugin_pool.register_plugin(Bootstrap3SpacerCMSPlugin)
 class Bootstrap3FileCMSPlugin(CMSPluginBase):
     model = models.Bootstrap3FilePlugin
     name = _("File")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/file.html'
     text_enabled = True
@@ -365,9 +365,9 @@ plugin_pool.register_plugin(Bootstrap3FileCMSPlugin)
 
 
 class Bootstrap3PanelCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3PanelPlugin
+    model = models.Bootstrap3PanelPlugin
     name = _("Panel")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/panel.html'
     form = forms.PanelPluginBaseForm
@@ -395,9 +395,9 @@ class Bootstrap3PanelCMSPlugin(CMSPluginBase):
         data = form.cleaned_data
         extra = {}
         subplugins = (
-            ('create_heading', models.Boostrap3PanelHeadingPlugin, Bootstrap3PanelHeadingCMSPlugin),
-            ('create_body', models.Boostrap3PanelBodyPlugin, Bootstrap3PanelBodyCMSPlugin),
-            ('create_footer', models.Boostrap3PanelFooterPlugin, Bootstrap3PanelFooterCMSPlugin),
+            ('create_heading', models.Bootstrap3PanelHeadingPlugin, Bootstrap3PanelHeadingCMSPlugin),
+            ('create_body', models.Bootstrap3PanelBodyPlugin, Bootstrap3PanelBodyCMSPlugin),
+            ('create_footer', models.Bootstrap3PanelFooterPlugin, Bootstrap3PanelFooterCMSPlugin),
         )
         existing_plugins = [p.plugin_type for p in obj.get_children()]
         for field, model_class, plugin_class in subplugins:
@@ -422,9 +422,9 @@ plugin_pool.register_plugin(Bootstrap3PanelCMSPlugin)
 
 
 class Bootstrap3PanelHeadingCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3PanelHeadingPlugin
+    model = models.Bootstrap3PanelHeadingPlugin
     name = _("Panel Heading")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/panel_heading.html'
     allow_children = True
@@ -447,9 +447,9 @@ plugin_pool.register_plugin(Bootstrap3PanelHeadingCMSPlugin)
 
 
 class Bootstrap3PanelBodyCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3PanelBodyPlugin
+    model = models.Bootstrap3PanelBodyPlugin
     name = _("Panel Body")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/panel_body.html'
     allow_children = True
@@ -472,9 +472,9 @@ plugin_pool.register_plugin(Bootstrap3PanelBodyCMSPlugin)
 
 
 class Bootstrap3PanelFooterCMSPlugin(CMSPluginBase):
-    model = models.Boostrap3PanelFooterPlugin
+    model = models.Bootstrap3PanelFooterPlugin
     name = _("Panel Footer")
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/panel_footer.html'
     allow_children = True
@@ -504,7 +504,7 @@ plugin_pool.register_plugin(Bootstrap3PanelFooterCMSPlugin)
 class Bootstrap3RowCMSPlugin(CMSPluginBase):
     model = models.Bootstrap3RowPlugin
     name = _('Row')
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/plugins/row/change_form.html'
     render_template = 'aldryn_bootstrap3/plugins/row.html'
     allow_children = True
@@ -557,7 +557,7 @@ class Bootstrap3RowCMSPlugin(CMSPluginBase):
 class Bootstrap3ColumnCMSPlugin(CMSPluginBase):
     model = models.Bootstrap3ColumnPlugin
     name = _('Column')
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/plugins/column/change_form.html'
     render_template = 'aldryn_bootstrap3/plugins/column.html'
     allow_children = True
@@ -597,7 +597,7 @@ plugin_pool.register_plugin(Bootstrap3ColumnCMSPlugin)
 class Bootstrap3AccordionCMSPlugin(CMSPluginBase):
     model = models.Bootstrap3AccordionPlugin
     name = _('Accordion')
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/accordion.html'
     allow_children = True
@@ -666,7 +666,7 @@ plugin_pool.register_plugin(Bootstrap3AccordionItemCMSPlugin)
 class Bootstrap3ListGroupCMSPlugin(CMSPluginBase):
     model = models.Bootstrap3ListGroupPlugin
     name = _('List Group')
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/list_group.html'
     allow_children = True
@@ -691,7 +691,7 @@ class Bootstrap3ListGroupCMSPlugin(CMSPluginBase):
 class Bootstrap3ListGroupItemCMSPlugin(CMSPluginBase):
     model = models.Bootstrap3ListGroupItemPlugin
     name = _('List Group Item')
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
     change_form_template = 'admin/aldryn_bootstrap3/base.html'
     render_template = 'aldryn_bootstrap3/plugins/list_group_item.html'
     allow_children = True
@@ -733,7 +733,7 @@ plugin_pool.register_plugin(Bootstrap3ListGroupItemCMSPlugin)
 
 # Base Classes
 class CarouselBase(CMSPluginBase):
-    module = _('Bootstrap3')
+    module = _('Bootstrap')
 
 
 class CarouselSlideBase(CarouselBase):

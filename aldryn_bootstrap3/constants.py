@@ -3,48 +3,45 @@ from __future__ import unicode_literals, absolute_import
 from django.utils.translation import ugettext_lazy as _
 from .conf import settings
 
-CONTEXT_CHOICES = (
+CONTEXT_CHOICES = getattr(settings, "ALDRYN_BOOTSTRAP3_CONTEXT_CHOICES", (
+    ('default', 'Default',),
     ('primary', 'Primary',),
     ('success', 'Success',),
     ('info', 'Info',),
     ('warning', 'Warning',),
     ('danger', 'Danger',),
-)
-CONTEXT_DEFAULT = 'default'
+))
 
-BUTTON_CONTEXT_CHOICES = (
-    ('default', 'Default',),
-) + CONTEXT_CHOICES + (
+CONTEXT_DEFAULT = CONTEXT_CHOICES[0][0]
+
+BUTTON_CONTEXT_CHOICES = getattr(settings, "ALDRYN_BOOTSTRAP3_BUTTON_CONTEXT_CHOICES", 
+CONTEXT_CHOICES + (
     ('link', 'Link',),
-)
-BUTTON_CONTEXT_DEFAULT = 'default'
+))
+BUTTON_CONTEXT_DEFAULT = BUTTON_CONTEXT_CHOICES[0][0]
 
-TXT_LINK_CONTEXT_CHOICES = (
-    ('', 'Default',),
+TXT_LINK_CONTEXT_CHOICES = getattr(settings, "ALDRYN_BOOTSTRAP3_LINK_CONTEXT_CHOICES", (
 ) + CONTEXT_CHOICES + (
     ('muted ', 'Muted',),
-)
-TXT_LINK_CONTEXT_DEFAULT = ''
+))
+TXT_LINK_CONTEXT_DEFAULT = TXT_LINK_CONTEXT_CHOICES[0][0]
 
 LABEL_CONTEXT_CHOICES = (
-    ('default', 'Default',),
 ) + CONTEXT_CHOICES + (
     # ('', 'Custom',),
 )
-LABEL_CONTEXT_DEFAULT = 'default'
+LABEL_CONTEXT_DEFAULT = LABEL_CONTEXT_CHOICES[0][0]
 
 PANEL_CONTEXT_CHOICES = (
-    ('default', 'Default',),
 ) + CONTEXT_CHOICES + (
     # ('', 'Custom',),
 )
-PANEL_CONTEXT_DEFAULT = 'default'
+PANEL_CONTEXT_DEFAULT = PANEL_CONTEXT_CHOICES[0][0]
 
 ACCORDION_ITEM_CONTEXT_CHOICES = PANEL_CONTEXT_CHOICES
 ACCORDION_ITEM_CONTEXT_DEFAULT = PANEL_CONTEXT_DEFAULT
 
 LIST_GROUP_ITEM_CONTEXT_CHOICES = (
-    ('', 'Default',),
 ) + CONTEXT_CHOICES
 LIST_GROUP_ITEM_CONTEXT_DEFAULT = ''
 
